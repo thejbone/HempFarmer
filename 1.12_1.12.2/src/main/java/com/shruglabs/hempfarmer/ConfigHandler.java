@@ -30,28 +30,28 @@ public class ConfigHandler {
 	public static boolean playerMutate = true;
 	@Config.Comment("Will Wand Affect Blocks")
 	public static boolean blockMutate = true;
-	@Config.Comment("Hemp- Hemp drop amount: [Default: 1]")
-	public static int hempAmount = 1;
+	@Config.Comment("Hemp- Hemp drop amount: [Default: 10]")
+	public static int hempAmount = 10;
 
-	@Config.Comment("Hemp- Bud drop amount [Default: 1]")
-	public static int hempBudAmount = 1;
-	@Config.Comment("Hemp- Seeds drop amount [Default: 1]")
-	public static int hempSeedsCropAmount = 1;
+	@Config.Comment("Hemp- Bud drop amount [Default: 10]")
+	public static int hempBudAmount = 10;
+	@Config.Comment("Hemp- Seeds drop amount [Default: 10]")
+	public static int hempSeedsCropAmount = 10;
 	
-	@Config.Comment("Sativa- Hemp drop amount: [Default: 1]")
-	public static int sativaAmount = 1;
+	@Config.Comment("Sativa- Hemp drop amount: [Default: 10]")
+	public static int sativaAmount = 10;
 
-	@Config.Comment("Sativa- Bud drop amount [Default: 1]")
-	public static int sativaBudAmount = 1;
-	@Config.Comment("Sativa- Seeds drop amount [Default: 1]")
-	public static int sativaSeedsCropAmount = 1;
-	@Config.Comment("Sativa- Hemp drop amount: [Default: 1]")
-	public static int indicaAmount = 1;
+	@Config.Comment("Sativa- Bud drop amount [Default: 10]")
+	public static int sativaBudAmount = 10;
+	@Config.Comment("Sativa- Seeds drop amount [Default: 10]")
+	public static int sativaSeedsCropAmount = 10;
+	@Config.Comment("Sativa- Hemp drop amount: [Default: 10]")
+	public static int indicaAmount = 10;
 
-	@Config.Comment("Sativa- Bud drop amount [Default: 1]")
-	public static int indicaBudAmount = 1;
-	@Config.Comment("Sativa- Seeds drop amount [Default: 1]")
-	public static int indicaSeedsCropAmount = 1;
+	@Config.Comment("Sativa- Bud drop amount [Default: 10]")
+	public static int indicaBudAmount = 10;
+	@Config.Comment("Sativa- Seeds drop amount [Default: 10]")
+	public static int indicaSeedsCropAmount = 10;
 	@Config.Comment("Maximum stack size for oil bottles. [Default: 1][Max:64][Min: 1] DO NOT pass min or max!")
 	public static int oilMaxStack = 1;
 	@Config.Comment("Plant Generation")
@@ -68,16 +68,4 @@ public class ConfigHandler {
 	public static int sativaCropSpawnAmount = 5;
 	@Config.Comment("Indica Generation Amount [Default: 5]")
 	public static int indicaCropSpawnAmount = 5;
-	
-
-/*
-	
-		HFArmor.particles = HempFarmer.config.getBoolean("Armor Particle effects:", "Armor", true,
-				"Create particle effects for HempFarmer armors.");
-		HFArmor.buffs = HempFarmer.config.getBoolean("Armor Potion effects:", "Armor", true,
-				"Apply potion effects for HempFarmer armors.");
-		
-
-	
-*/
 }
