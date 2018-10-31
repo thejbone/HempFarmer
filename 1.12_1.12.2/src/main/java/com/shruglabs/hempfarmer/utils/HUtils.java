@@ -1,11 +1,15 @@
 package com.shruglabs.hempfarmer.utils;
 
+import java.util.Random;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
 public class HUtils {
+	public static Random random = new Random();
+	
 	 /**
      * Spawns particles
      */

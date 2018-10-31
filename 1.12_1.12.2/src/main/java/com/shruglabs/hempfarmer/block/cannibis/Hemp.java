@@ -7,6 +7,7 @@ import java.util.Random;
 import com.shruglabs.hempfarmer.ConfigHandler;
 import com.shruglabs.hempfarmer.block.HFBlockCrops;
 import com.shruglabs.hempfarmer.init.HFItems;
+import com.shruglabs.hempfarmer.utils.HUtils;
 
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
@@ -42,10 +43,9 @@ public class Hemp extends HFBlockCrops {
 	@Override
 	protected Item getSeed() {
 		Item seed;
-		Random random = new Random();
-		int x = random.nextInt(30) + 1;
+		int x = HUtils.random.nextInt(30) + 1;
 		if (x > 27) {
-			boolean y = random.nextBoolean();
+			boolean y = HUtils.random.nextBoolean();
 			seed = y == true ? HFItems.seeds_indica : HFItems.seeds_sativa;
 		} else {
 			seed = HFItems.seeds_hemp;
@@ -55,8 +55,7 @@ public class Hemp extends HFBlockCrops {
 
 	@Override
 	protected Item getCrop() {
-		Random random = new Random();
-		int x = random.nextInt(30) + 1;
+		int x = HUtils.random.nextInt(30) + 1;
 		Hemp.crop = x > 27 ? HFItems.bud : HFItems.raw_hemp;
 		this.setCropName(crop.equals(HFItems.raw_hemp) ? "hemp" : "bud");
 		return HFBlockCrops.crop;
@@ -68,7 +67,7 @@ public class Hemp extends HFBlockCrops {
 		super.getDrops(world, pos, state, fortune);
 		List<ItemStack> ret = new ArrayList<ItemStack>();
 		int age = getAge(state);
-		Random rand = world instanceof World ? ((World) world).rand : new Random();
+		Random rand = world instanceof World ? ((World) world).rand : HUtils.random;
 
 		if (age >= getMaxAge()) {
 			if (rand.nextInt(2 * getMaxAge()) <= age) {
