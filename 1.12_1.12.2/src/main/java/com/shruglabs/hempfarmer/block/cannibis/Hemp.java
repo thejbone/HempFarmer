@@ -88,29 +88,39 @@ public class Hemp extends BlockCrops {
 	}
 
 	@Override
-	public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state,
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
 			int fortune) {
-		NonNullList<ItemStack> ret = NonNullList.create();
 		int age = getAge(state);
 		int i;
 		if (age >= getMaxAge()) {
 			i = ConfigHandler.hempSeedsCropAmount - 3;
-			if(i > 0)
-				super.getDrops(ret, world, pos, state, i);
+			if(i > -3)
+				super.getDrops(drops, world, pos, state, i);
+			
 			Item crop = getCrop();
-			i = HUtils.random.nextInt((crop == HFItems.raw_hemp ? ConfigHandler.hempAmount : ConfigHandler.hempBudAmount) + 1);
+			if(crop == HFItems.raw_hemp)
+				i = ConfigHandler.hempAmount;
+			else if(crop == HFItems.bud)
+				i = ConfigHandler.hempBudAmount;
+			else if(crop == HFItems.lime_raw_hemp)
+				i = ConfigHandler.sativaAmount;
+			else if(crop == HFItems.sativa_bud)
+				i = ConfigHandler.sativaBudAmount;
+			else if(crop == HFItems.violet_raw_hemp)
+				i = ConfigHandler.indicaAmount;
+			else
+				i = ConfigHandler.indicaBudAmount;
+			
+			i = HUtils.random.nextInt(i + 1);
 			if (i > 0)
-				ret.add(new ItemStack(crop, i));
+				drops.add(new ItemStack(crop, i));
 		}
 		
 		if (ConfigHandler.enableWand && HUtils.random.nextBoolean())
 		{
 			i = HUtils.random.nextInt(3);
 			if (i > 0)
-				ret.add(new ItemStack(HFItems.leaf, i));
+				drops.add(new ItemStack(HFItems.leaf, i));
 		}
-		
-		return ret;
 	}
-
 }
