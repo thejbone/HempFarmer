@@ -1,12 +1,9 @@
 package com.shruglabs.hempfarmer.block.cannibis;
 
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Sativa extends Hemp {
 
-	
-	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
 	public static final AxisAlignedBB[] HEMP_AABB = new AxisAlignedBB[] {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.19D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.38D, 1.0D),
