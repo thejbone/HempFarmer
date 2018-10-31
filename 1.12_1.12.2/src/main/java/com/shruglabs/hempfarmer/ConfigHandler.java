@@ -63,11 +63,11 @@ public class ConfigHandler {
 	@Config.Comment("Indica Generation")
 	public static boolean indicaCropSpawn = true;
 	@Config.Comment("hemp Generation Amount [Default: 5]")
-	public static int hempCropSpawnAmount = 5000;
+	public static int hempCropSpawnAmount = 5;
 	@Config.Comment("Sativa Generation Amount [Default: 5]")
-	public static int sativaCropSpawnAmount = 5000;
+	public static int sativaCropSpawnAmount = 5;
 	@Config.Comment("Indica Generation Amount [Default: 5]")
-	public static int indicaCropSpawnAmount = 5000;
+	public static int indicaCropSpawnAmount = 5;
 	
 
 /*
