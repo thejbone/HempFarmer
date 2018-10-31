@@ -84,7 +84,7 @@ public class Indica extends HFBlockCrops {
 
 			}
 		}
-		if (ConfigHandler.enableWand == true) {
+		if (ConfigHandler.enableWand) {
 			int x = rand.nextInt(100) + 1;
 			if (x > 99) {
 				ret.add(new ItemStack(HFItems.leaf, rand.nextInt(2) + 1));

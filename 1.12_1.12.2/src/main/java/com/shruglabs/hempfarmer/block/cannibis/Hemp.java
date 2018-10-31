@@ -45,8 +45,7 @@ public class Hemp extends HFBlockCrops {
 		Item seed;
 		int x = HUtils.random.nextInt(30) + 1;
 		if (x > 27) {
-			boolean y = HUtils.random.nextBoolean();
-			seed = y == true ? HFItems.seeds_indica : HFItems.seeds_sativa;
+			seed = HUtils.random.nextBoolean() ? HFItems.seeds_indica : HFItems.seeds_sativa;
 		} else {
 			seed = HFItems.seeds_hemp;
 		}
@@ -80,7 +79,7 @@ public class Hemp extends HFBlockCrops {
 
 			}
 		}
-		if (ConfigHandler.enableWand == true) {
+		if (ConfigHandler.enableWand) {
 			int x = rand.nextInt(100) + 1;
 			if (x > 99) {
 				ret.add(new ItemStack(HFItems.leaf, rand.nextInt(2) + 1));
