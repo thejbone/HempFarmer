@@ -52,12 +52,12 @@ public EnumAction getItemUseAction(ItemStack stack) {
 	@Override
 	@Nullable
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-		int x = HUtils.random.nextInt(1000) + 250;
+		int x = HUtils.random.nextInt(10000) + 2500;
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(8), x, 6, true, false));
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(17), x, 1, true, false));
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(2), x, 1, true, false));
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(16), x, 5, true, false));
-		x = HUtils.random.nextInt(400) + 150;
+		x = HUtils.random.nextInt(4000) + 1500;
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(9), x, 5, true, false));
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(11), x + 100, 5, true, false));
 		entityLiving.addPotionEffect(new PotionEffect(Potion.getPotionById(24), x - 60, 5, true, false));
