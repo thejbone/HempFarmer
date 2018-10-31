@@ -23,14 +23,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class HempGenDecor  implements IWorldGenerator{
-	
-	
-
-    public HempGenDecor(){
+	public HempGenDecor(){
        
         GameRegistry.registerWorldGenerator(this, 50);
         MinecraftForge.TERRAIN_GEN_BUS.register(this);
     }
+	
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void getGenEvent(DecorateBiomeEvent.Decorate event) {
 		//if (!ConfigHandler.genPlants)
@@ -73,10 +71,5 @@ public class HempGenDecor  implements IWorldGenerator{
 
 	}
 	@Override
-	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
-			IChunkProvider chunkProvider) {
-	
-		
-	}
-
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {}
 }

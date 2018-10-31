@@ -1,14 +1,11 @@
 package com.shruglabs.hempfarmer.init;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-
 public class HFRecipes {
-	
 	@SubscribeEvent
 	public static void FurnaceRegister(FMLPreInitializationEvent event) {
 
