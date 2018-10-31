@@ -18,7 +18,7 @@ public class IndicaJoint extends Joint {
 	@Override
 	@Nullable
 	public ItemStack onItemUseFinish(ItemStack stack, World world, EntityLivingBase entity) {
-		entity.addPotionEffect(new PotionEffect(Potion.getPotionById(16), 200, 2, true, false));
+		entity.addPotionEffect(new PotionEffect(Potion.getPotionById(16), 2000, 2, true, false));
 		return super.onItemUseFinish(stack, world, entity);
 	}
 }

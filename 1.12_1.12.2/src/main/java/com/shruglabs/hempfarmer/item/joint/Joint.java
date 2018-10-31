@@ -65,11 +65,11 @@ public class Joint extends HFDrug {
 		}
 
 		if (!world.isRemote) {
-			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 400, 1, true, false));
-			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(8), 400, 2, true, false));
-			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 50, 3, true, false));
-			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(17), 150, 1, true, false));
-			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(24), 400, 2, true, false));
+			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 4000, 1, true, false));
+			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(8), 4000, 2, true, false));
+			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 500, 3, true, false));
+			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(17), 1500, 1, true, false));
+			entity.addPotionEffect(new PotionEffect(Potion.getPotionById(24), 4000, 2, true, false));
 			smoke(entity, world);
 		}
 		return stack;

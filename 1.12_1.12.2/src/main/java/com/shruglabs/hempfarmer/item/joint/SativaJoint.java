@@ -18,7 +18,7 @@ public class SativaJoint extends Joint {
 	@Override
 	@Nullable
 	public ItemStack onItemUseFinish(ItemStack stack, World world, EntityLivingBase entity) {
-		entity.addPotionEffect(new PotionEffect(Potion.getPotionById(10), 100, 2, true, false));
+		entity.addPotionEffect(new PotionEffect(Potion.getPotionById(10), 1000, 2, true, false));
 		return super.onItemUseFinish(stack, world, entity);
 	}
 }
