@@ -42,14 +42,7 @@ public class Hemp extends HFBlockCrops {
 
 	@Override
 	protected Item getSeed() {
-		Item seed;
-		int x = HUtils.random.nextInt(30) + 1;
-		if (x > 27) {
-			seed = HUtils.random.nextBoolean() ? HFItems.seeds_indica : HFItems.seeds_sativa;
-		} else {
-			seed = HFItems.seeds_hemp;
-		}
-		return seed;
+		return HFItems.seeds_hemp;
 	}
 
 	@Override

@@ -43,14 +43,7 @@ public class Sativa extends HFBlockCrops {
 
 	@Override
 	protected Item getSeed() {
-		Item seed;
-		int x = HUtils.random.nextInt(10) + 1;
-		if (x > 7) {
-			seed = HFItems.seeds_indica;
-		} else {
-			seed = HFItems.seeds_sativa;
-		}
-		return seed;
+		return HFItems.seeds_sativa;
 	}
 
 	@Override

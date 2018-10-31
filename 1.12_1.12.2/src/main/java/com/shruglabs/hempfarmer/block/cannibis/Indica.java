@@ -42,14 +42,7 @@ public class Indica extends HFBlockCrops {
 
 	@Override
 	protected Item getSeed() {
-		Item seed;
-		int x = HUtils.random.nextInt(10) + 1;
-		if (x > 7) {
-			seed = HFItems.seeds_sativa;
-		} else {
-			seed = HFItems.seeds_indica;
-		}
-		return seed;
+		return HFItems.seeds_indica;
 	}
 
 	@Override
