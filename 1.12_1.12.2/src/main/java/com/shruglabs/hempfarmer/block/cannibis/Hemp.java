@@ -3,10 +3,12 @@ package com.shruglabs.hempfarmer.block.cannibis;
 import java.util.List;
 
 import com.shruglabs.hempfarmer.ConfigHandler;
-import com.shruglabs.hempfarmer.block.HFBlockCrops;
+import com.shruglabs.hempfarmer.creativetab.HFCreativeTabs;
+import com.shruglabs.hempfarmer.init.HFBlocks;
 import com.shruglabs.hempfarmer.init.HFItems;
 import com.shruglabs.hempfarmer.utils.HUtils;
 
+import net.minecraft.block.BlockCrops;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
@@ -16,10 +18,10 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class Hemp extends HFBlockCrops {
+public class Hemp extends BlockCrops {
 
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
-	private static final AxisAlignedBB[] HEMP_AABB = new AxisAlignedBB[] {
+	public static final AxisAlignedBB[] HEMP_AABB = new AxisAlignedBB[] {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.1328125D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.265625D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.3984375D, 1.0D),
@@ -29,8 +31,45 @@ public class Hemp extends HFBlockCrops {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.9296875D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0625, 1.0D) };
 
-	public Hemp(String name) {
-		super(name);
+	private final Item seed;
+	private final Item[] crops;
+	
+	public Hemp() {
+		this(HEMP_TYPE.HYBRID);
+	}
+	
+	public Hemp(HEMP_TYPE type) {
+		Item seed;
+		String name;
+		Item[] crops = new Item[2];
+		switch(type)
+		{
+			case INDICA:
+				seed = HFItems.seeds_indica;
+				name = "indica_crop";
+				crops[0] = HFItems.violet_raw_hemp;
+				crops[1] = HFItems.indica_bud;
+				break;
+			case SATIVA:
+				seed = HFItems.seeds_sativa;
+				name = "sativa_crop";
+				crops[0] = HFItems.lime_raw_hemp;
+				crops[1] = HFItems.sativa_bud;
+				break;
+			default:
+				seed = HFItems.seeds_hemp;
+				name = "hemp_crop";
+				crops[0] = HFItems.raw_hemp;
+				crops[1] = HFItems.bud;
+				break;
+		}
+		
+		this.seed = seed;
+		this.crops = crops;
+		this.setRegistryName(name);
+		this.setUnlocalizedName(name);
+		this.setCreativeTab(HFCreativeTabs.HempFarmer);
+		HFBlocks.blocks.add(this);
 	}
 
 	@Override
@@ -40,15 +79,12 @@ public class Hemp extends HFBlockCrops {
 
 	@Override
 	protected Item getSeed() {
-		return HFItems.seeds_hemp;
+		return seed;
 	}
 
 	@Override
 	protected Item getCrop() {
-		int x = HUtils.random.nextInt(30) + 1;
-		Hemp.crop = x > 27 ? HFItems.bud : HFItems.raw_hemp;
-		this.setCropName(crop.equals(HFItems.raw_hemp) ? "hemp" : "bud");
-		return HFBlockCrops.crop;
+		return crops[HUtils.random.nextInt(2)];
 	}
 
 	@Override

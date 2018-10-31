@@ -3,7 +3,6 @@ package com.shruglabs.hempfarmer.block.cannibis;
 import java.util.List;
 
 import com.shruglabs.hempfarmer.ConfigHandler;
-import com.shruglabs.hempfarmer.block.HFBlockCrops;
 import com.shruglabs.hempfarmer.init.HFItems;
 import com.shruglabs.hempfarmer.utils.HUtils;
 
@@ -16,11 +15,11 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class Sativa extends HFBlockCrops {
+public class Sativa extends Hemp {
 
 	
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
-	private static final AxisAlignedBB[] SATIVA_AABB = new AxisAlignedBB[] {
+	public static final AxisAlignedBB[] HEMP_AABB = new AxisAlignedBB[] {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.19D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.38D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.57D, 1.0D),
@@ -30,28 +29,8 @@ public class Sativa extends HFBlockCrops {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.33D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.52D, 1.0D) };
 
-	public Sativa(String name) {
-		super(name);
-	}
-
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return SATIVA_AABB[((Integer) state.getValue(this.getAgeProperty())).intValue()];
-	}
-
-	@Override
-	protected Item getSeed() {
-		return HFItems.seeds_sativa;
-	}
-
-	@Override
-	protected Item getCrop() {
-		Item crop;
-		int x = HUtils.random.nextInt(10) + 1;
-		crop = x > 5 ? HFItems.lime_raw_hemp : HFItems.sativa_bud;
-		this.setCropName(crop.equals(HFItems.lime_raw_hemp) ? "hemp" : "bud");
-		
-		return crop;
+	public Sativa() {
+		super(HEMP_TYPE.SATIVA);
 	}
 	
 	@Override
