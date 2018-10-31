@@ -46,8 +46,6 @@ public class Indica extends HFBlockCrops {
 		int x = HUtils.random.nextInt(10) + 1;
 		if (x > 7) {
 			seed = HFItems.seeds_sativa;
-		} else if (x > 9) {
-			seed = HFItems.seeds_hemp;
 		} else {
 			seed = HFItems.seeds_indica;
 		}
