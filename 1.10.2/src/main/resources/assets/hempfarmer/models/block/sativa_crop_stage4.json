@@ -1,6 +1,0 @@
-{
-  "parent": "hempfarmer:block/cannibis_sativa",
-  "textures": {
-    "crop": "hempfarmer:blocks/sativa_crop_stage4"
-  }
-}
