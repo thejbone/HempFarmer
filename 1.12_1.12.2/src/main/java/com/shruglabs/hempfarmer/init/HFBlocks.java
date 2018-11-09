@@ -30,7 +30,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class HFBlocks  {
 
-	public static List<Block> blocks = new ArrayList<Block>();
+	public static final List<Block> blocks = new ArrayList<Block>();
 	public static final Block burlap = new Burlap(HFMaterial.BURLAP, "burlap");
 	public static final Block violet_burlap = new VioletBurlap(HFMaterial.VIOLET_BURLAP, "violet_burlap");
 	public static final Block lime_burlap = new LimeBurlap(HFMaterial.LIME_BURLAP, "lime_burlap");

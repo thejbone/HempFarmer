@@ -35,18 +35,18 @@ public class Hemp extends BlockCrops {
 	
 	public Hemp(HEMP_TYPE type) {
 		String name;
-		Item[] crops = new Item[2];
+		this.crops = new Item[2];
 		switch(type)
 		{
 			case INDICA:
 				name = "indica_crop";
-				crops[0] = HFItems.violet_raw_hemp;
-				crops[1] = HFItems.indica_bud;
+				this.crops[0] = HFItems.violet_raw_hemp;
+				this.crops[1] = HFItems.indica_bud;
 				break;
 			case SATIVA:
 				name = "sativa_crop";
-				crops[0] = HFItems.lime_raw_hemp;
-				crops[1] = HFItems.sativa_bud;
+				this.crops[0] = HFItems.lime_raw_hemp;
+				this.crops[1] = HFItems.sativa_bud;
 				break;
 			default:
 				name = "hemp_crop";
@@ -55,7 +55,6 @@ public class Hemp extends BlockCrops {
 				break;
 		}
 		
-		this.crops = crops;
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
 		this.setCreativeTab(HFCreativeTabs.HempFarmer);
