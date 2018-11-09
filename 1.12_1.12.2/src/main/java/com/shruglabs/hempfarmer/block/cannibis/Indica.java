@@ -1,5 +1,8 @@
 package com.shruglabs.hempfarmer.block.cannibis;
 
+import com.shruglabs.hempfarmer.init.HFItems;
+
+import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Indica extends Hemp {
@@ -16,5 +19,10 @@ public class Indica extends Hemp {
 
 	public Indica() {
 		super(HEMP_TYPE.INDICA);
+	}
+
+	@Override
+	protected Item getSeed() {
+		return HFItems.seeds_indica;
 	}
 }

@@ -1,5 +1,8 @@
 package com.shruglabs.hempfarmer.block.cannibis;
 
+import com.shruglabs.hempfarmer.init.HFItems;
+
+import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Sativa extends Hemp {
@@ -16,5 +19,10 @@ public class Sativa extends Hemp {
 
 	public Sativa() {
 		super(HEMP_TYPE.SATIVA);
+	}
+
+	@Override
+	protected Item getSeed() {
+		return HFItems.seeds_sativa;
 	}
 }

@@ -27,7 +27,6 @@ public class Hemp extends BlockCrops {
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.9296875D, 1.0D),
 			new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0625, 1.0D) };
 
-	private final Item seed;
 	private final Item[] crops;
 	
 	public Hemp() {
@@ -35,32 +34,27 @@ public class Hemp extends BlockCrops {
 	}
 	
 	public Hemp(HEMP_TYPE type) {
-		Item seed;
 		String name;
 		Item[] crops = new Item[2];
 		switch(type)
 		{
 			case INDICA:
-				seed = HFItems.seeds_indica;
 				name = "indica_crop";
 				crops[0] = HFItems.violet_raw_hemp;
 				crops[1] = HFItems.indica_bud;
 				break;
 			case SATIVA:
-				seed = HFItems.seeds_sativa;
 				name = "sativa_crop";
 				crops[0] = HFItems.lime_raw_hemp;
 				crops[1] = HFItems.sativa_bud;
 				break;
 			default:
-				seed = HFItems.seeds_hemp;
 				name = "hemp_crop";
 				crops[0] = HFItems.raw_hemp;
 				crops[1] = HFItems.bud;
 				break;
 		}
 		
-		this.seed = seed;
 		this.crops = crops;
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
@@ -75,7 +69,7 @@ public class Hemp extends BlockCrops {
 
 	@Override
 	protected Item getSeed() {
-		return seed;
+		return HFItems.seeds_hemp;
 	}
 
 	@Override
