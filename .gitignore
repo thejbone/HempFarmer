@@ -5,7 +5,7 @@ bin
 .metadata
 .classpath
 .project
-
+*.xml
 # idea
 out
 *.ipr
@@ -16,6 +16,9 @@ out
 # gradle
 build
 .gradle
+/classes/
+/run/
+
 
 # other
 eclipse
